@@ -40,3 +40,15 @@ class Prototype:
         for key in attrs:
             setattr(obj, key, attrs[key])
         return obj
+
+
+def copy_itself(original_obj,**attrs):
+    copied=copy.deepcopy(original_obj)
+    for key in attrs:
+        setattr(obj,key,attrs[key])
+    return copied
+
+
+class Person:
+    def __init__(self,**kwargs):
+        print(kwargs)

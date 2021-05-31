@@ -19,3 +19,19 @@ class WebSite:
                 continue
             summary.append(f'{attr}:{val}')
         return ''.join(summary)
+
+class Prototype:
+    def __init__(self):
+        self.objects=dict()
+    def register(self,identifier,obj):
+        self.objects[identifier]=obj
+    def unregister(self,identifier):
+        del self.objects[identifier]]
+    def clone(self,identifier,**attrs):
+        found=self.objects.get(identifier)
+        if not found:
+            raise ValueError(f"incorret object identifier {identifier}")
+        obj=copy.deepcopy(found)
+        for key in attrs:
+            setattr(obj,key,attrs[key])
+        return obj
