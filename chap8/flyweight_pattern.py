@@ -19,3 +19,15 @@ class Car:
         type = self.car_type
         msg = f'render a car of type {type} and color {color} at ({x},{y})'
         print(msg)
+def main():
+  import random
+  rnd=random.Random()
+  colors="white black silver gray red blue brown beige yellow green".split(" ")
+  min_point,max_point=0,100
+  car_counter=0
+  for _ in range(10):
+        c1=Car(CarType.subcompact)
+        c1.render(random.choice(colors),rnd.randint(min_point,,max_point),
+        rnd.randint(min_point,max_point))
+        car_counter+=1
+      gf
